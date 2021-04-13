@@ -1,0 +1,3 @@
+/home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/temp/formatter_lib/_build/CMakeFiles/rebuild_cache.dir
+/home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/temp/formatter_lib/_build/CMakeFiles/edit_cache.dir
+/home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/temp/formatter_lib/_build/CMakeFiles/formatter.dir

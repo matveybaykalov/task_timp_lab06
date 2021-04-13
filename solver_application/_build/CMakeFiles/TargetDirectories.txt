@@ -1,0 +1,6 @@
+/home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_application/_build/CMakeFiles/rebuild_cache.dir
+/home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_application/_build/CMakeFiles/edit_cache.dir
+/home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_application/_build/CMakeFiles/solver_lib.dir
+/home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_application/_build/CMakeFiles/formatter_ex.dir
+/home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_application/_build/CMakeFiles/formatter.dir
+/home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_application/_build/CMakeFiles/myExe.dir

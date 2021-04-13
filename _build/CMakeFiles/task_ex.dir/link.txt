@@ -1,0 +1,2 @@
+/usr/bin/ar qc libtask_ex.a  CMakeFiles/task_ex.dir/formatter_ex_lib/formatter_ex.cpp.o
+/usr/bin/ranlib libtask_ex.a
