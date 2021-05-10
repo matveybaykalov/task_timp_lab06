@@ -4,7 +4,7 @@ os:
 - linux
 
 script:
-- cd ./solver_appliction
+- cd ./solver_application
 - cmake -H. -B_build
 - cmake --build _build
 - if ["$TRAVIS_OS_NAME" = "linux"]; then cpack -G TGZ; fi
