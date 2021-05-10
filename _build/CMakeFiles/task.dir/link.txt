@@ -1,2 +1,0 @@
-/usr/bin/ar qc libtask.a  CMakeFiles/task.dir/formatter_lib/formatter.cpp.o
-/usr/bin/ranlib libtask.a

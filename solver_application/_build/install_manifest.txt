@@ -1,7 +1,0 @@
-/home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_application/_build/_CPack_Packages/Linux/TGZ/solver-0.1.0.0-Linux/lib/libsolver_lib.a
-/home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_application/_build/_CPack_Packages/Linux/TGZ/solver-0.1.0.0-Linux/lib/libformatter.a
-/home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_application/_build/_CPack_Packages/Linux/TGZ/solver-0.1.0.0-Linux/lib/libformatter_ex.a
-/home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_application/_build/_CPack_Packages/Linux/TGZ/solver-0.1.0.0-Linux/include/solver.cpp
-/home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_application/_build/_CPack_Packages/Linux/TGZ/solver-0.1.0.0-Linux/include/solver.h
-/home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_application/_build/_CPack_Packages/Linux/TGZ/solver-0.1.0.0-Linux/cmake/solver_lib-config.cmake
-/home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_application/_build/_CPack_Packages/Linux/TGZ/solver-0.1.0.0-Linux/cmake/solver_lib-config-noconfig.cmake
