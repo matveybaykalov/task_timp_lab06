@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_application
+CMAKE_SOURCE_DIR = /home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_application
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_application/_build
+CMAKE_BINARY_DIR = /home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_application/_build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/solver_lib.dir/depend.make
@@ -57,30 +57,30 @@ include CMakeFiles/solver_lib.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/solver_lib.dir/flags.make
 
-CMakeFiles/solver_lib.dir/home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_lib/solver.cpp.o: CMakeFiles/solver_lib.dir/flags.make
-CMakeFiles/solver_lib.dir/home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_lib/solver.cpp.o: /home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_lib/solver.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_application/_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/solver_lib.dir/home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_lib/solver.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/solver_lib.dir/home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_lib/solver.cpp.o -c /home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_lib/solver.cpp
+CMakeFiles/solver_lib.dir/home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_lib/solver.cpp.o: CMakeFiles/solver_lib.dir/flags.make
+CMakeFiles/solver_lib.dir/home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_lib/solver.cpp.o: /home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_lib/solver.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_application/_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/solver_lib.dir/home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_lib/solver.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/solver_lib.dir/home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_lib/solver.cpp.o -c /home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_lib/solver.cpp
 
-CMakeFiles/solver_lib.dir/home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_lib/solver.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/solver_lib.dir/home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_lib/solver.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_lib/solver.cpp > CMakeFiles/solver_lib.dir/home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_lib/solver.cpp.i
+CMakeFiles/solver_lib.dir/home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_lib/solver.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/solver_lib.dir/home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_lib/solver.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_lib/solver.cpp > CMakeFiles/solver_lib.dir/home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_lib/solver.cpp.i
 
-CMakeFiles/solver_lib.dir/home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_lib/solver.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/solver_lib.dir/home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_lib/solver.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_lib/solver.cpp -o CMakeFiles/solver_lib.dir/home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_lib/solver.cpp.s
+CMakeFiles/solver_lib.dir/home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_lib/solver.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/solver_lib.dir/home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_lib/solver.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_lib/solver.cpp -o CMakeFiles/solver_lib.dir/home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_lib/solver.cpp.s
 
 # Object files for target solver_lib
 solver_lib_OBJECTS = \
-"CMakeFiles/solver_lib.dir/home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_lib/solver.cpp.o"
+"CMakeFiles/solver_lib.dir/home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_lib/solver.cpp.o"
 
 # External object files for target solver_lib
 solver_lib_EXTERNAL_OBJECTS =
 
-libsolver_lib.a: CMakeFiles/solver_lib.dir/home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_lib/solver.cpp.o
+libsolver_lib.a: CMakeFiles/solver_lib.dir/home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_lib/solver.cpp.o
 libsolver_lib.a: CMakeFiles/solver_lib.dir/build.make
 libsolver_lib.a: CMakeFiles/solver_lib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_application/_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libsolver_lib.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_application/_build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libsolver_lib.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/solver_lib.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/solver_lib.dir/link.txt --verbose=$(VERBOSE)
 
@@ -94,6 +94,6 @@ CMakeFiles/solver_lib.dir/clean:
 .PHONY : CMakeFiles/solver_lib.dir/clean
 
 CMakeFiles/solver_lib.dir/depend:
-	cd /home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_application/_build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_application /home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_application /home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_application/_build /home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_application/_build /home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_application/_build/CMakeFiles/solver_lib.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_application/_build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_application /home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_application /home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_application/_build /home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_application/_build /home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_application/_build/CMakeFiles/solver_lib.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/solver_lib.dir/depend
 

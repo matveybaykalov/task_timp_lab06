@@ -1,0 +1,18 @@
+language: cpp
+
+os:
+- linux
+
+script:
+- cd solver_appliction
+- cmake -H. -B_build
+- cmake --build _build
+- if ["$TRAVIS_OS_NAME" = "linux"]; then cpack -G TGZ; fi
+
+deploy:
+  provider: releases
+  api_key: "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"
+  file: "_build/solver-0.1.0.0-Linux.tar.gz"
+  skip_cleanup: true
+  on:
+    tags: true

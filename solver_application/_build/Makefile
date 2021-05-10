@@ -48,24 +48,25 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_application
+CMAKE_SOURCE_DIR = /home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_application
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_application/_build
+CMAKE_BINARY_DIR = /home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_application/_build
 
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
 
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -78,11 +79,78 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
+# Special rule for the target package
+package: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
+	/usr/bin/cpack --config ./CPackConfig.cmake
+.PHONY : package
+
+# Special rule for the target package
+package/fast: package
+
+.PHONY : package/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
+# Special rule for the target package_source
+package_source:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
+	/usr/bin/cpack --config ./CPackSourceConfig.cmake /home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_application/_build/CPackSourceConfig.cmake
+.PHONY : package_source
+
+# Special rule for the target package_source
+package_source/fast: package_source
+
+.PHONY : package_source/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_application/_build/CMakeFiles /home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_application/_build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_application/_build/CMakeFiles /home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_application/_build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_application/_build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_application/_build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -189,86 +257,86 @@ equation.cpp.s:
 	$(MAKE) -f CMakeFiles/myExe.dir/build.make CMakeFiles/myExe.dir/equation.cpp.s
 .PHONY : equation.cpp.s
 
-home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/formatter_ex_lib/formatter_ex.o: home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/formatter_ex_lib/formatter_ex.cpp.o
+home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/formatter_ex_lib/formatter_ex.o: home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/formatter_ex_lib/formatter_ex.cpp.o
 
-.PHONY : home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/formatter_ex_lib/formatter_ex.o
-
-# target to build an object file
-home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/formatter_ex_lib/formatter_ex.cpp.o:
-	$(MAKE) -f CMakeFiles/formatter_ex.dir/build.make CMakeFiles/formatter_ex.dir/home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/formatter_ex_lib/formatter_ex.cpp.o
-.PHONY : home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/formatter_ex_lib/formatter_ex.cpp.o
-
-home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/formatter_ex_lib/formatter_ex.i: home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/formatter_ex_lib/formatter_ex.cpp.i
-
-.PHONY : home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/formatter_ex_lib/formatter_ex.i
-
-# target to preprocess a source file
-home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/formatter_ex_lib/formatter_ex.cpp.i:
-	$(MAKE) -f CMakeFiles/formatter_ex.dir/build.make CMakeFiles/formatter_ex.dir/home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/formatter_ex_lib/formatter_ex.cpp.i
-.PHONY : home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/formatter_ex_lib/formatter_ex.cpp.i
-
-home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/formatter_ex_lib/formatter_ex.s: home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/formatter_ex_lib/formatter_ex.cpp.s
-
-.PHONY : home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/formatter_ex_lib/formatter_ex.s
-
-# target to generate assembly for a file
-home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/formatter_ex_lib/formatter_ex.cpp.s:
-	$(MAKE) -f CMakeFiles/formatter_ex.dir/build.make CMakeFiles/formatter_ex.dir/home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/formatter_ex_lib/formatter_ex.cpp.s
-.PHONY : home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/formatter_ex_lib/formatter_ex.cpp.s
-
-home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/formatter_lib/formatter.o: home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/formatter_lib/formatter.cpp.o
-
-.PHONY : home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/formatter_lib/formatter.o
+.PHONY : home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/formatter_ex_lib/formatter_ex.o
 
 # target to build an object file
-home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/formatter_lib/formatter.cpp.o:
-	$(MAKE) -f CMakeFiles/formatter.dir/build.make CMakeFiles/formatter.dir/home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/formatter_lib/formatter.cpp.o
-.PHONY : home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/formatter_lib/formatter.cpp.o
+home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/formatter_ex_lib/formatter_ex.cpp.o:
+	$(MAKE) -f CMakeFiles/formatter_ex.dir/build.make CMakeFiles/formatter_ex.dir/home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/formatter_ex_lib/formatter_ex.cpp.o
+.PHONY : home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/formatter_ex_lib/formatter_ex.cpp.o
 
-home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/formatter_lib/formatter.i: home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/formatter_lib/formatter.cpp.i
+home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/formatter_ex_lib/formatter_ex.i: home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/formatter_ex_lib/formatter_ex.cpp.i
 
-.PHONY : home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/formatter_lib/formatter.i
+.PHONY : home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/formatter_ex_lib/formatter_ex.i
 
 # target to preprocess a source file
-home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/formatter_lib/formatter.cpp.i:
-	$(MAKE) -f CMakeFiles/formatter.dir/build.make CMakeFiles/formatter.dir/home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/formatter_lib/formatter.cpp.i
-.PHONY : home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/formatter_lib/formatter.cpp.i
+home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/formatter_ex_lib/formatter_ex.cpp.i:
+	$(MAKE) -f CMakeFiles/formatter_ex.dir/build.make CMakeFiles/formatter_ex.dir/home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/formatter_ex_lib/formatter_ex.cpp.i
+.PHONY : home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/formatter_ex_lib/formatter_ex.cpp.i
 
-home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/formatter_lib/formatter.s: home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/formatter_lib/formatter.cpp.s
+home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/formatter_ex_lib/formatter_ex.s: home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/formatter_ex_lib/formatter_ex.cpp.s
 
-.PHONY : home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/formatter_lib/formatter.s
+.PHONY : home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/formatter_ex_lib/formatter_ex.s
 
 # target to generate assembly for a file
-home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/formatter_lib/formatter.cpp.s:
-	$(MAKE) -f CMakeFiles/formatter.dir/build.make CMakeFiles/formatter.dir/home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/formatter_lib/formatter.cpp.s
-.PHONY : home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/formatter_lib/formatter.cpp.s
+home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/formatter_ex_lib/formatter_ex.cpp.s:
+	$(MAKE) -f CMakeFiles/formatter_ex.dir/build.make CMakeFiles/formatter_ex.dir/home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/formatter_ex_lib/formatter_ex.cpp.s
+.PHONY : home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/formatter_ex_lib/formatter_ex.cpp.s
 
-home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_lib/solver.o: home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_lib/solver.cpp.o
+home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/formatter_lib/formatter.o: home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/formatter_lib/formatter.cpp.o
 
-.PHONY : home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_lib/solver.o
+.PHONY : home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/formatter_lib/formatter.o
 
 # target to build an object file
-home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_lib/solver.cpp.o:
-	$(MAKE) -f CMakeFiles/solver_lib.dir/build.make CMakeFiles/solver_lib.dir/home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_lib/solver.cpp.o
-.PHONY : home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_lib/solver.cpp.o
+home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/formatter_lib/formatter.cpp.o:
+	$(MAKE) -f CMakeFiles/formatter.dir/build.make CMakeFiles/formatter.dir/home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/formatter_lib/formatter.cpp.o
+.PHONY : home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/formatter_lib/formatter.cpp.o
 
-home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_lib/solver.i: home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_lib/solver.cpp.i
+home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/formatter_lib/formatter.i: home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/formatter_lib/formatter.cpp.i
 
-.PHONY : home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_lib/solver.i
+.PHONY : home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/formatter_lib/formatter.i
 
 # target to preprocess a source file
-home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_lib/solver.cpp.i:
-	$(MAKE) -f CMakeFiles/solver_lib.dir/build.make CMakeFiles/solver_lib.dir/home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_lib/solver.cpp.i
-.PHONY : home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_lib/solver.cpp.i
+home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/formatter_lib/formatter.cpp.i:
+	$(MAKE) -f CMakeFiles/formatter.dir/build.make CMakeFiles/formatter.dir/home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/formatter_lib/formatter.cpp.i
+.PHONY : home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/formatter_lib/formatter.cpp.i
 
-home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_lib/solver.s: home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_lib/solver.cpp.s
+home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/formatter_lib/formatter.s: home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/formatter_lib/formatter.cpp.s
 
-.PHONY : home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_lib/solver.s
+.PHONY : home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/formatter_lib/formatter.s
 
 # target to generate assembly for a file
-home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_lib/solver.cpp.s:
-	$(MAKE) -f CMakeFiles/solver_lib.dir/build.make CMakeFiles/solver_lib.dir/home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_lib/solver.cpp.s
-.PHONY : home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_lib/solver.cpp.s
+home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/formatter_lib/formatter.cpp.s:
+	$(MAKE) -f CMakeFiles/formatter.dir/build.make CMakeFiles/formatter.dir/home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/formatter_lib/formatter.cpp.s
+.PHONY : home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/formatter_lib/formatter.cpp.s
+
+home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_lib/solver.o: home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_lib/solver.cpp.o
+
+.PHONY : home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_lib/solver.o
+
+# target to build an object file
+home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_lib/solver.cpp.o:
+	$(MAKE) -f CMakeFiles/solver_lib.dir/build.make CMakeFiles/solver_lib.dir/home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_lib/solver.cpp.o
+.PHONY : home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_lib/solver.cpp.o
+
+home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_lib/solver.i: home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_lib/solver.cpp.i
+
+.PHONY : home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_lib/solver.i
+
+# target to preprocess a source file
+home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_lib/solver.cpp.i:
+	$(MAKE) -f CMakeFiles/solver_lib.dir/build.make CMakeFiles/solver_lib.dir/home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_lib/solver.cpp.i
+.PHONY : home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_lib/solver.cpp.i
+
+home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_lib/solver.s: home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_lib/solver.cpp.s
+
+.PHONY : home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_lib/solver.s
+
+# target to generate assembly for a file
+home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_lib/solver.cpp.s:
+	$(MAKE) -f CMakeFiles/solver_lib.dir/build.make CMakeFiles/solver_lib.dir/home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_lib/solver.cpp.s
+.PHONY : home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_lib/solver.cpp.s
 
 # Help Target
 help:
@@ -276,24 +344,30 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
+	@echo "... install/local"
 	@echo "... edit_cache"
+	@echo "... install"
+	@echo "... list_install_components"
+	@echo "... rebuild_cache"
+	@echo "... package"
+	@echo "... install/strip"
 	@echo "... solver_lib"
 	@echo "... formatter_ex"
 	@echo "... formatter"
+	@echo "... package_source"
 	@echo "... myExe"
 	@echo "... equation.o"
 	@echo "... equation.i"
 	@echo "... equation.s"
-	@echo "... home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/formatter_ex_lib/formatter_ex.o"
-	@echo "... home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/formatter_ex_lib/formatter_ex.i"
-	@echo "... home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/formatter_ex_lib/formatter_ex.s"
-	@echo "... home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/formatter_lib/formatter.o"
-	@echo "... home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/formatter_lib/formatter.i"
-	@echo "... home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/formatter_lib/formatter.s"
-	@echo "... home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_lib/solver.o"
-	@echo "... home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_lib/solver.i"
-	@echo "... home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_lib/solver.s"
+	@echo "... home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/formatter_ex_lib/formatter_ex.o"
+	@echo "... home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/formatter_ex_lib/formatter_ex.i"
+	@echo "... home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/formatter_ex_lib/formatter_ex.s"
+	@echo "... home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/formatter_lib/formatter.o"
+	@echo "... home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/formatter_lib/formatter.i"
+	@echo "... home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/formatter_lib/formatter.s"
+	@echo "... home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_lib/solver.o"
+	@echo "... home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_lib/solver.i"
+	@echo "... home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_lib/solver.s"
 .PHONY : help
 
 

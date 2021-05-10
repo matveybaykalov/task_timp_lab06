@@ -1,0 +1,10 @@
+Architecture: amd64
+Description: static C++ library for solving
+Maintainer: m.baykalov@mail.ru
+Package: libsolver-dev
+Pre-Depends: cmake >= 3.0
+Priority: optional
+Section: devel
+Version: 0.1.0.0-1
+Installed-Size: 34
+

@@ -6,5 +6,5 @@ CXX_FLAGS =   -std=gnu++11
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_application/../formatter_lib -I/home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_application/../formatter_ex_lib -I/home/bayk/matveybaykalov/workspace/projects/task_timp_lab03/solver_application/../solver_lib 
+CXX_INCLUDES = -I/home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_application/../formatter_lib -I/home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_application/../formatter_ex_lib -I/home/bayk/matveybaykalov/workspace/projects/task_timp_lab06/solver_application/../solver_lib 
 
