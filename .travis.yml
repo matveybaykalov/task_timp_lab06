@@ -2,12 +2,23 @@ language: cpp
 
 os:
 - linux
+- osx
+- windows
+
+addons:
+  apt:
+    packages:
+    - rpm
 
 script:
 - cd ./solver_application
 - cmake -H. -B_build
 - cmake --build _build
 - if ["$TRAVIS_OS_NAME" = "linux"]; then cpack -G TGZ; fi
+- if ["$TRAVIS_OS_NAME" = "osx"]; then cpack -G DragnDrop; fi
+
+build_scripts:
+- if ["$TRAVIS_OS_NAME" = "windows"]; then cpack -G WIX; fi
 
 deploy:
   provider: releases
